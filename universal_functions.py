@@ -2,17 +2,22 @@ import numpy as np
 
 ###################### 1. 最大值 #################################
 def maximum(list):
-    max = np.max(list)
+    max = list[1]
+    for i in range(len(list)):
+        if list[i]>max:
+            max = list[i]
     return max
-
 
 ###################### 2. 最小值 #################################
 def minimum(list):
-    min = np.min(list)
+    min = list[1]
+    for i in range(len(list)):
+        if list[i]<min:
+            min = list[i]
     return min
 
 ###################### 3. 快速排序 #################################
-def quickSort(lists,i,j):
+def quickSort(lists,i,j,asc):
     if i >= j:
         return list
     pivot = lists[i]
@@ -28,10 +33,13 @@ def quickSort(lists,i,j):
     lists[j] = pivot
     quickSort(lists,low,i-1)
     quickSort(lists,i+1,high)
-    return lists
+    if asc==1:
+        return lists
+    if asc==0:
+        return list(reversed(lists))
 
 ###################### 4.冒泡排序 #################################
-def bubbleSort(lists):
+def bubbleSort(lists, asc):
     n = len(lists)
  
     for i in range(n):
@@ -39,16 +47,25 @@ def bubbleSort(lists):
             if lists[j] > lists[j+1] :
                 lists[j], lists[j+1] = lists[j+1], lists[j]
     
-    return lists
+    if asc==1:
+        return lists
+    if asc==0:
+        return list(reversed(lists))
 
 ###################### 5.求和 #################################
-def sum(list):
-    sum = np.sum(list)
+def sum(list, i=None, j=None):
+    if i==None and j==None:
+        sum = np.sum(list)
+    else:
+        sum = np.sum(list[i-1:j])
     return sum
 
 ###################### 6.平均 #################################
-def avg(list):
-    avg = np.average(list)
+def avg(list, i=None, j=None):
+    if i==None and j==None:
+        avg = np.average(list)
+    else:
+        avg = np.average(list[i-1:j])
     return avg
 
 ###################### 7.查找第k大/小 #################################
@@ -69,6 +86,12 @@ def findKthSmallest(lists, k):
                 lists[i], lists[j] = lists[j], lists[i]
     return lists[k-1]
 
+def findKth(lists, k, large):
+    if large==1:
+        findKthLargest(lists, k)
+    if large==0:
+        findKthSmallest(lists, k)
+
 ###################### 8.中位数 #################################
 def median(list):
     list.sort()
@@ -79,7 +102,9 @@ def median(list):
 import statistics
 
 def mode(list):
-    return statistics.mode(list)
+    number = statistics.mode(list)
+    count = list.count(number)
+    return number, count
 
 ###################### 10.方差 #################################
 def variance(list):
