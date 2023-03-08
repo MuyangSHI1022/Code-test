@@ -4,7 +4,7 @@ import scipy.stats as stats
 '''''''''''''''''''1.标准正态分布'''''''''''''''''''
 def normal_samples(size):
     return np.random.normal(0, 1, size)
-print(type(np.random.normal()))
+
 '''''''''''''''''''2.韦伯分布'''''''''''''''''''
 def weibull_samples(a,size):
     return np.random.weibull(a,size)
