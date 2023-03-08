@@ -95,6 +95,14 @@ def findKth(lists, k, large):
 ###################### 8.中位数 #################################
 def median(list):
     list.sort()
+    half = len(list) / 2
+    if type(half) == int:
+        return list[int(half)-1]
+    else:
+        return list[int(np.ceil(half))-1]
+
+def medianUseAvg(list):
+    list.sort()
     half = len(list) // 2
     return (list[half] + list[~half]) / 2
 
@@ -102,6 +110,9 @@ def median(list):
 import statistics
 
 def mode(list):
+    return statistics.mode(list)
+
+def modeWithFrequency(list):
     number = statistics.mode(list)
     count = list.count(number)
     return number, count
