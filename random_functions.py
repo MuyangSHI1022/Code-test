@@ -81,3 +81,24 @@ def triangular_samples(left, mode, right, size):
 '''''''''''''''''''20.Levy分布'''''''''''''''''''
 def levy_samples(alpha, beta, size):
     return stats.levy_stable.rvs(alpha=alpha, beta=beta, size=size)
+
+'''''''''''''''''''21.狄拉克分布'''''''''''''''''''
+def dirac_samples(mu, kappa, size):
+    return np.random.vonmises(mu, kappa, size)
+
+'''''''''''''''''''22.多项式分布'''''''''''''''''''
+def polynomial_samples(n, pvals, size):
+    return np.random.multinomial(n, pvals, size)
+
+'''''''''''''''''''23.狄利克雷分布'''''''''''''''''''
+def dirichlet_samples(alpha, size):
+    return np.random.dirichlet(alpha, size)
+
+'''''''''''''''''''24.逻辑斯谛分布'''''''''''''''''''
+def logistic_samples(loc, scale, size):
+    return np.random.logistic(loc, scale, size)
+
+'''''''''''''''''''25.数据分布'''''''''''''''''''
+def choice_samples(vals, pvals, size):
+    return np.random.choice(a=vals, p=pvals, size=(size))
+print(choice_samples([3, 5, 7, 9], [0.1, 0.3, 0.6, 0.0], (100)))
