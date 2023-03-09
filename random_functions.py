@@ -101,4 +101,3 @@ def logistic_samples(loc, scale, size):
 '''''''''''''''''''25.数据分布'''''''''''''''''''
 def choice_samples(vals, pvals, size):
     return np.random.choice(a=vals, p=pvals, size=(size))
-print(choice_samples([3, 5, 7, 9], [0.1, 0.3, 0.6, 0.0], (100)))
