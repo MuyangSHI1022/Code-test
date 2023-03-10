@@ -1,0 +1,49 @@
+NORMAL_SAMPLES(name: "normal_samples", description: "生成服从标准正态分布的随机数/随机数组", params: "int size", returnValue: "T ans", category: "随机函数"),
+
+WEIBULL_SAMPLES(name: "weibull_samples", description: "生成服从韦伯分布的随机数/随机数组", params: "float a, int size", returnValue: "T ans", category: "随机函数"),
+
+EXPONENTIEL_SAMPLES(name: "exponential_samples", description: "生成服从指数分布的随机数/随机数组", params: "float scale, int size", returnValue: "T ans", category: "随机函数"),
+
+CAUCHY_SAMPLES(name: "cauchy_samples", description: "生成服从柯西分布的随机数/随机数组", params: "int size", returnValue: "T ans", category: "随机函数"),
+
+GUMBEL_SAMPLES(name: "gumbel_samples", description: "生成服从耿贝尔分布的随机数/随机数组", params: "float loc, float scale, int size", returnValue: "T ans", category: "随机函数"),
+
+BETA_SAMPLES(name: "beta_samples", description: "生成服从beta分布的随机数/随机数组", params: "float alpha, float scale, int size", returnValue: "T ans", category: "随机函数"),
+
+NORMAL_SAMPLES(name: "normal_samples", description: "生成服从N(mean,sigama)正态分布的随机数/随机数组", params: "float loc,float scale, int size", returnValue: "T ans", category: "随机函数"),
+
+CHI2_SAMPLES(name: "chi2_samples", description: "生成服从卡方分布的随机数/随机数组", params: "float df, int size", returnValue: "T ans", category: "随机函数"),
+
+F_SAMPLES(name: "f_samples", description: "生成服从F分布的随机数/随机数组", params: "float dfn, float dfd , int size", returnValue: "T ans", category: "随机函数"),
+
+T_SAMPLES(name: "t_samples", description: "生成服从学生t分布的随机数/随机数组", params: "float df, int size", returnValue: "T ans", category: "随机函数"),
+
+LAPLACE_SAMPLES(name: "laplace_samples", description: "生成服从拉普拉斯分布的随机数/随机数组", params: "float loc, float scale, int size", returnValue: "T ans", category: "随机函数"),
+
+PARETO_SAMPLES(name: "pareto_samples", description: "生成服从帕累托分布的随机数/随机数组", params: "float a, int size", returnValue: "T ans", category: "随机函数"),
+
+GEOMETRIC_SAMPLES(name: "geometric_samples", description: "生成服从几何分布的随机数/随机数组", params: "float p, int size", returnValue: "T ans", category: "随机函数"),
+
+HYPERGEOMETRIC_SAMPLES(name: "hypergeometric_samples", description: "生成服从超几何分布的随机数/随机数组", params: "int ngood, int nbad, int nsample, int size", returnValue: "T ans", category: "随机函数"),
+
+BINOMIAL_SAMPLES(name: binomial_samples", description: "生成服从二项分布的随机数/随机数组", params: "float p, int n , int size", returnValue: "T ans", category: "随机函数"),
+
+POISSON_SAMPLES(name: "poisson_samples", description: "生成服从泊松分布的随机数/随机数组", params: "float lam, int size", returnValue: "T ans", category: "随机函数"),
+
+GAMMA_SAMPLES(name: gamma_samples", description: "生成服从伽马分布的随机数/随机数组", params: "float shape, float scale , int size", returnValue: "T ans", category: "随机函数"),
+
+PASCAL_SAMPLES(name: pascal_samples", description: "生成服从帕斯卡分布的随机数/随机数组", params: "int k, float p, int size", returnValue: "T ans", category: "随机函数"),
+
+TRIANGULAR_SAMPLES(name: "triangular_samples", description: "生成服从三角分布的随机数/随机数组", params: "float left, float mode, float right, int size", returnValue: "T ans", category: "随机函数"),
+
+LEVY_SAMPLES(name: levy_samples", description: "生成服从levy分布的随机数/随机数组", params: "float alpha, float beta , int size", returnValue: "T ans", category: "随机函数"),
+
+DIRAC_SAMPLES(name: dirac_samples", description: "生成服从狄拉克分布的随机数/随机数组", params: "float mu, float kappa , int size", returnValue: "T ans", category: "随机函数"),
+
+POLYNOMIAL_SAMPLES(name: polynomial_samples", description: "生成服从多项式分布的随机数/随机数组", params: "int n, list pvals, int size", returnValue: "T ans", category: "随机函数"),
+
+DIRICHLET_SAMPLES(name: dirichlet_samples", description: "生成服从狄利克雷分布的随机数/随机数组", params: "list alpha, int size", returnValue: "T ans", category: "随机函数"),
+
+LOGISTIC_SAMPLES(name: logistic_samples", description: "生成服从伽马分布的随机数/随机数组", params: "float loc, float scale , int size", returnValue: "T ans", category: "随机函数"),
+
+CHOICE_SAMPLES(name: choice_samples", description: "生成服从数据分布的随机数/随机数组", params: "list alpha, list pvals, int size", returnValue: "T ans", category: "随机函数")

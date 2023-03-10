@@ -1,5 +1,3 @@
-import numpy as np
-
 ###################### 1. 最大值 #################################
 def maximum(list):
     max = list[1]
@@ -17,7 +15,7 @@ def minimum(list):
     return min
 
 ###################### 3. 快速排序 #################################
-def quickSort(lists,i,j,asc):
+def quick_Sort(lists, i, j):
     if i >= j:
         return list
     pivot = lists[i]
@@ -31,15 +29,19 @@ def quickSort(lists,i,j,asc):
             i += 1
         lists[j]=lists[i]
     lists[j] = pivot
-    quickSort(lists,low,i-1)
-    quickSort(lists,i+1,high)
-    if asc==1:
-        return lists
+    quick_Sort(lists,low,i-1)
+    quick_Sort(lists,i+1,high)
+    return lists
+    
+def quickSort(lists, asc=None):
     if asc==0:
-        return list(reversed(lists))
+        ans = quick_Sort(lists, 0, len(lists)-1)
+        return list(reversed(ans))
+    else:
+        return quick_Sort(lists, 0, len(lists)-1)
 
 ###################### 4.冒泡排序 #################################
-def bubbleSort(lists, asc):
+def bubbleSort(lists, asc=None):
     n = len(lists)
  
     for i in range(n):
@@ -47,13 +49,14 @@ def bubbleSort(lists, asc):
             if lists[j] > lists[j+1] :
                 lists[j], lists[j+1] = lists[j+1], lists[j]
     
-    if asc==1:
-        return lists
     if asc==0:
         return list(reversed(lists))
+    else:
+        return lists
 
 ###################### 5.求和 #################################
 def sum(list, i=None, j=None):
+    import numpy as np
     if i==None and j==None:
         sum = np.sum(list)
     else:
@@ -62,6 +65,7 @@ def sum(list, i=None, j=None):
 
 ###################### 6.平均 #################################
 def avg(list, i=None, j=None):
+    import numpy as np
     if i==None and j==None:
         avg = np.average(list)
     else:
@@ -69,9 +73,8 @@ def avg(list, i=None, j=None):
     return avg
 
 ###################### 7.查找第k大/小 #################################
-import heapq
-
 def findKthLargest(lists, k):
+    import heapq
     stack = []
     for num in lists:
         heapq.heappush(stack, lists)
@@ -94,6 +97,7 @@ def findKth(lists, k, large):
 
 ###################### 8.中位数 #################################
 def median(list):
+    import numpy as np
     list.sort()
     half = len(list) / 2
     if type(half) == int:
@@ -119,10 +123,12 @@ def modeWithFrequency(list):
 
 ###################### 10.方差 #################################
 def variance(list):
+    import numpy as np
     return np.var(list)
 
 ###################### 11.标准差 #################################
 def standard(list):
+    import numpy as np
     return np.std(list, ddof=1)
 
 ###################### 12.交换 #################################
